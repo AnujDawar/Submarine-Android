@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.example.anujd.submarine_version1.MainActivity"
+    android:background="@android:color/black">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="20dp">
+
+        <com.example.anujd.submarine_version1.HorizontalWheelView
+            android:id="@+id/horizontalWheelView"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_centerInParent="true"
+            app:activeColor="@color/colorYellow"
+            app:normalColor="@android:color/white"/>
+
+        <com.example.anujd.submarine_version1.HorizontalWheelView
+            android:id="@+id/verticalWheelView"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            app:activeColor="#84FFFF"
+            app:normalColor="@android:color/white"
+            android:rotation="90"/>
+
+    </RelativeLayout>
+
+    <com.cardiomood.android.controls.gauge.SpeedometerGauge
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:padding="1dp"
+        android:background="@android:color/transparent"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:id="@+id/speedometer" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
+        android:id="@+id/speedValue"
+        android:layout_alignBottom="@id/speedometer"
+        android:layout_marginBottom="50dp"
+        android:layout_centerInParent="true"
+        android:textSize="20sp"/>
+
+    <ImageView
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:src="@mipmap/disconnected_circle"
+        android:id="@+id/connectivityStatusImage"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="20dp"
+        android:layout_alignParentLeft="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Disconnected"
+        android:textSize="12sp"
+        android:layout_toRightOf="@id/connectivityStatusImage"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="2dp"
+        android:layout_marginLeft="5dp"
+        android:id="@+id/connectivityStatusTextView"
+        android:textColor="@android:color/white"/>
+
+    <ImageButton
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@mipmap/brake_pedal"
+        android:background="@android:color/transparent"
+        android:id="@+id/brakePedal"
+        android:scaleType="fitCenter"
+        android:layout_alignParentBottom="true" />
+
+    <ImageButton
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/gas_pedal"
+        android:background="@android:color/transparent"
+        android:id="@+id/gasPedal"
+        android:scaleType="fitCenter"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"/>
+
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/snackbarCoordinatorLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/batteryPercentage"
+        android:text="0%"
+        android:textSize="12sp"
+        android:layout_marginRight="10dp"
+        android:layout_alignParentRight="true"
+        android:textColor="@android:color/white"/>
+
+    <com.cardiomood.android.controls.gauge.BatteryIndicatorGauge
+        android:layout_width="20dp"
+        android:layout_height="8dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="5dp"
+        android:layout_toLeftOf="@id/batteryPercentage"
+        android:id="@+id/batteryIndicator"/>
+
+    <RelativeLayout
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="20dp">
+
+        <com.example.anujd.submarine_version1.JoystickView
+            xmlns:custom="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/joystickView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/joystick_background"
+            custom:JV_buttonImage="@drawable/pink_ball"
+            custom:JV_fixedCenter="true" />
+    </RelativeLayout>
+
+</RelativeLayout>
